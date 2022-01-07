@@ -1,5 +1,6 @@
 import { defineUserConfig, ViteBundlerOptions } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
+import { path } from '@vuepress/utils'
 // @ts-expect-error
 import Package from '../../package.json'
 
@@ -68,4 +69,13 @@ export default defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
       configFile: 'docs/vite.config.ts',
     },
   },
+
+  plugins: [
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
+  ],
 })
