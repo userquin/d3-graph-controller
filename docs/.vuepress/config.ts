@@ -1,4 +1,4 @@
-import { defineUserConfig, ViteBundlerOptions } from 'vuepress'
+import { defineUserConfig, Page, ViteBundlerOptions } from 'vuepress'
 import type { DefaultThemeOptions } from 'vuepress'
 import { path } from '@vuepress/utils'
 import Package from '../../package.json'
@@ -76,5 +76,6 @@ export default defineUserConfig<DefaultThemeOptions, ViteBundlerOptions>({
         componentsDir: path.resolve(__dirname, './components'),
       },
     ],
+    ['@vuepress/plugin-search', {}],
   ],
 })
